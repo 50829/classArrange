@@ -11,7 +11,8 @@ def parse_time_location(time_location_str):
     time_location_str = str(time_location_str)
     
     # 处理可能的换行符和特殊字符
-    time_location_str = time_location_str.replace('_x000d_\n', '\n').replace('\n', ';')
+    # 先删除所有的_x000d_字符串，然后处理换行符
+    time_location_str = time_location_str.replace('_x000d_', '').replace('\n', ';')
     
     # 分割多个时间段
     time_segments = [segment.strip() for segment in time_location_str.split(';') if segment.strip()]
@@ -29,6 +30,16 @@ def parse_time_location(time_location_str):
         week_info = match.group(1).strip()
         location = match.group(2).strip()
         time_slots = match.group(3).strip()
+        
+        # 解析校区信息
+        campus = None
+        if location:
+            if location.startswith(('1', '2', '5')):
+                campus = 1
+            elif location.startswith('3'):
+                campus = 2
+            elif location.startswith('GT'):
+                campus = 3
         
         # 解析周次信息
         week_pattern = r'^(\d+)~(\d+)(?:\((单|双)\))?$'
@@ -64,6 +75,7 @@ def parse_time_location(time_location_str):
                 'week_type': week_type  # None表示全周，'单'表示单周，'双'表示双周
             },
             'location': location,
+            'campus': campus,
             'time_slots': time_slots_list
         }
         
