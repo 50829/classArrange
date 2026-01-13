@@ -41,13 +41,13 @@ class CourseGroupApp {
     private searchBtn: HTMLButtonElement;
     private clearBtn: HTMLButtonElement;
     private selectedGroupIds: Set<number>;
+    private searchResults: ClassNumberGroup[];
     
     // 弹窗相关元素
     private modal: HTMLElement;
     private closeBtn: HTMLElement;
     private modalCourseName: HTMLElement;
     private modalCourseInfo: HTMLElement;
-    private courseSchedule: HTMLTableElement;
 
     constructor() {
         // 初始化DOM元素
@@ -64,10 +64,11 @@ class CourseGroupApp {
         this.closeBtn = document.querySelector('.close')!;
         this.modalCourseName = document.getElementById('modal-course-name')!;
         this.modalCourseInfo = document.getElementById('modal-course-info')!;
-        this.courseSchedule = document.getElementById('course-schedule') as HTMLTableElement;
         
         // 初始化已选课程组ID集合
         this.selectedGroupIds = this.loadSelectedGroupsFromStorage();
+        // 初始化搜索结果
+        this.searchResults = [];
 
         // 绑定事件
         this.bindEvents();
@@ -157,7 +158,7 @@ class CourseGroupApp {
             <div class="selected-group-item" data-group-id="${group.class_number_group_id}">
                 <span class="group-info">
                     ${group.course_name} (ID: ${group.class_number_group_id})<br>
-                    <small>课程编号: ${group.course_number} | 课堂编号: ${group.class_numbers.join(',')}</small>
+                    <small>课程编号: ${group.course_number} | 课堂编号: ${this.formatClassNumbers(group.class_numbers)}</small>
                 </span>
                 <button class="remove-btn" data-group-id="${group.class_number_group_id}">
                     ×
@@ -203,15 +204,19 @@ class CourseGroupApp {
         this.modalCourseName.textContent = `${group.course_name} (ID: ${group.class_number_group_id})`;
         this.modalCourseInfo.innerHTML = `
             <p><strong>课程编号:</strong> ${group.course_number}</p>
-            <p><strong>课堂编号:</strong> ${group.class_numbers.join(',')}</p>
+            <p><strong>课堂编号:</strong> ${this.formatClassNumbers(group.class_numbers)}</p>
             <p><strong>学分:</strong> ${group.credit}</p>
             <p><strong>考核方式:</strong> ${group.assessment_method}</p>
             <p><strong>周次:</strong> ${this.formatWeekInfo(group.parsed_time_location[0].week_info)}</p>
             <p><strong>校区:</strong> ${this.formatCampus(group.parsed_time_location[0].campus)}</p>
+            <p><strong>时间:</strong> ${group.parsed_time_location.map(item => this.formatTimeSlots(item.time_slots)).join(' ')}</p>
+            <div class="mini-schedule">
+                <strong>课程表:</strong>
+                <table class="mini-course-table">
+                    ${this.generateMiniScheduleHTML(group)}
+                </table>
+            </div>
         `;
-
-        // 生成课程表
-        this.generateCourseSchedule(group);
 
         // 显示弹窗
         this.modal.style.display = 'block';
@@ -222,64 +227,6 @@ class CourseGroupApp {
         this.modal.style.display = 'none';
     }
 
-    // 生成课程表
-    private generateCourseSchedule(group: ClassNumberGroup): void {
-        // 表头：周日到周六
-        const days = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
-        
-        // 生成表格HTML
-        let tableHTML = '<thead><tr>';
-        days.forEach(day => tableHTML += `<th>${day}</th>`);
-        tableHTML += '</tr></thead>';
-        
-        // 生成表格主体（13行）
-        tableHTML += '<tbody>';
-        for (let i = 1; i <= 13; i++) {
-            tableHTML += '<tr>';
-            for (let j = 0; j < 7; j++) {
-                tableHTML += '<td></td>';
-            }
-            tableHTML += '</tr>';
-        }
-        tableHTML += '</tbody>';
-        
-        
-        // 设置表格HTML
-        this.courseSchedule.innerHTML = tableHTML;
-        
-        // 填充课程时间
-        this.populateCourseSchedule(group);
-    }
-
-    // 填充课程表
-    private populateCourseSchedule(group: ClassNumberGroup): void {
-        // 遍历所有时间段
-        group.parsed_time_location.forEach(timeInfo => {
-            timeInfo.time_slots.forEach(slot => {
-                // 注意：day_of_week是1-7表示周一到周日，而表格中第1列是周日（索引0）
-                let tableDayIndex = slot.day_of_week;
-                if (tableDayIndex === 7) { // 周日
-                    tableDayIndex = 0;
-                }
-                
-                // 填充每个节次
-                slot.periods.forEach(period => {
-                    const rowIndex = period;
-                    const cell = this.courseSchedule.rows[rowIndex].cells[tableDayIndex]; // 节次列已删除，直接使用tableDayIndex
-                    
-                    // 添加课程时间块
-                    const timeSlotElement = document.createElement('div');
-                    timeSlotElement.className = 'time-slot';
-                    timeSlotElement.textContent = `${group.course_name}`;
-                    
-                    cell.appendChild(timeSlotElement);
-                });
-            });
-        });
-    }
-
-
-
     // 处理搜索
     private handleSearch(): void {
         const courseNumber = this.courseNumberInput.value.trim();
@@ -288,6 +235,9 @@ class CourseGroupApp {
 
         // 执行搜索
         const results = this.searchGroups(courseNumber, courseName, groupId);
+        
+        // 更新搜索结果
+        this.searchResults = results;
         
         // 显示搜索结果
         this.renderGroups(results, this.searchResultsContainer);
@@ -330,10 +280,56 @@ class CourseGroupApp {
 
         container.innerHTML = groups.map(group => this.renderGroupCard(group)).join('');
         
-        // 如果是搜索结果容器，绑定复选框事件
+        // 如果是搜索结果容器，绑定复选框事件并渲染迷你课表
         if (container === this.searchResultsContainer) {
             this.bindCheckboxEvents();
+            this.renderMiniSchedules();
         }
+    }
+
+    // 渲染所有迷你课表
+    private renderMiniSchedules(): void {
+        this.searchResults.forEach(group => {
+            const tableElement = document.querySelector(`.mini-course-table[data-group-id="${group.class_number_group_id}"]`);
+            if (tableElement) {
+                tableElement.innerHTML = this.generateMiniScheduleHTML(group);
+            }
+        });
+    }
+
+    // 生成迷你课表的HTML
+    private generateMiniScheduleHTML(group: ClassNumberGroup): string {
+        // 创建7天×13节的表格，使用二维数组表示
+        const schedule = Array(13).fill(null).map(() => Array(7).fill(false));
+
+        // 填充课程时间
+        group.parsed_time_location.forEach(timeLoc => {
+            timeLoc.time_slots.forEach((timeSlot: TimeSlot) => {
+                const dayOfWeek = timeSlot.day_of_week; // 0=周日, 1=周一, ..., 6=周六
+                timeSlot.periods.forEach((period: number) => {
+                    if (period >= 1 && period <= 13) {
+                        schedule[period - 1][dayOfWeek] = true;
+                    }
+                });
+            });
+        });
+
+        // 生成HTML
+        let html = '<tbody>';
+        for (let period = 0; period < 13; period++) {
+            html += '<tr>';
+            for (let day = 0; day < 7; day++) {
+                if (schedule[period][day]) {
+                    html += '<td class="mini-class-period"></td>';
+                } else {
+                    html += '<td class="mini-empty-period"></td>';
+                }
+            }
+            html += '</tr>';
+        }
+        html += '</tbody>';
+
+        return html;
     }
 
     // 格式化周次信息
@@ -357,6 +353,14 @@ class CourseGroupApp {
     private formatCampus(campus: number): string {
         const campusNames = ['', '1号校区', '2号校区', '3号校区'];
         return campusNames[campus] || `校区${campus}`;
+    }
+
+    // 格式化课堂编号
+    private formatClassNumbers(classNumbers: string[]): string {
+        if (classNumbers.length > 10) {
+            return '很多';
+        }
+        return classNumbers.join(',');
     }
 
     // 渲染课程组卡片
@@ -388,9 +392,15 @@ class CourseGroupApp {
                 </div>
                 <p><strong>课程组ID:</strong> ${group.class_number_group_id}</p>
                 <p><strong>课程编号:</strong> ${group.course_number}</p>
-                <p><strong>课堂编号:</strong> ${group.class_numbers.join(',')}</p>
+                <p><strong>课堂编号:</strong> ${this.formatClassNumbers(group.class_numbers)}</p>
                 <p><strong>学分:</strong> ${group.credit}</p>
                 <p><strong>考核方式:</strong> ${group.assessment_method}</p>
+                <div class="mini-schedule">
+                    <strong>迷你课表:</strong>
+                    <table class="mini-course-table" data-group-id="${group.class_number_group_id}">
+                        <!-- 迷你课表将通过JavaScript生成 -->
+                    </table>
+                </div>
                 <div class="time-location">
                     <strong>时间地点:</strong>
                     ${renderParsedTimeLocation(group.parsed_time_location)}

@@ -380,3 +380,43 @@ button {
         height: 25px;
     }
 }
+
+/* 迷你课表样式 */
+.mini-schedule {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.mini-course-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8px;
+    margin-top: 5px;
+}
+
+.mini-course-table td {
+    width: calc(100% / 7);
+    height: 12px;
+    border: 1px solid #ddd;
+    padding: 0;
+}
+
+/* 第一列（周日）和第六列（周五）右边的分割线加粗虚线 */
+.mini-course-table td:nth-child(1),
+.mini-course-table td:nth-child(6) {
+    border-right: 1.5px solid #333;
+}
+
+/* 第五行和第10行下面的分割线加粗虚线 */
+.mini-course-table tr:nth-child(5) td,
+.mini-course-table tr:nth-child(10) td {
+    border-bottom: 1.5px dashed #333;
+}
+
+.mini-class-period {
+    background-color: #4CAF50;
+}
+
+.mini-empty-period {
+    background-color: #ffffff;
+}
