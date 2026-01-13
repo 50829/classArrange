@@ -1,4 +1,3 @@
-"use strict";
 // 应用类
 class CourseGroupApp {
     constructor() {

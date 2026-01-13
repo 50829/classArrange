@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选课系统</title>
+    <link rel="stylesheet" href="classArrange.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>课程组选择系统</h1>
+            <p>展示已保存的课程组</p>
+        </header>
+
+        <main>
+            <section class="selected-groups">
+                <h2>已选课程组</h2>
+                <div id="selected-groups-container">
+                    <p class="no-selections">暂无选择的课程组</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 引入数据文件 -->
+    <script src="class_info_data.js"></script>
+    <!-- 引入TypeScript编译后的JavaScript文件 -->
+    <script src="classArrange.js"></script>
+</body>
+</html>

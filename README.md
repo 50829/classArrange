@@ -20,11 +20,6 @@
 
 ```
 classArrange/
-├── classInfo.xlsx                    # 原始Excel课程信息文件
-├── classInfo.json                    # 从Excel转换的原始JSON文件
-├── classInfo_processed.json          # 处理后的JSON文件，包含解析后的时间地点
-├── classInfo_processed_with_group_id.json # 添加了group_id的课程信息
-├── classNumberGroup.json             # class_number_group数据
 ├── class_info_data.js                # JavaScript格式的数据文件
 ├── data_processing/                  # 数据处理相关脚本
 │   ├── excel_to_json.py              # Excel转JSON的脚本
@@ -33,14 +28,16 @@ classArrange/
 │   ├── process_class_number_group.py # class_number_group生成程序
 │   ├── main.py                       # 一键执行完整流程的主程序
 │   └── json_to_js.py                 # JSON转JavaScript的脚本
-├── index.html                        # 前端HTML文件
-├── styles.css                        # 前端CSS文件
-├── app.ts                            # 前端TypeScript文件
-├── app.js                            # 编译后的JavaScript文件
+├── index.html                        # 主页HTML文件
+├── addClass.html                     # 选课HTML文件
+├── addClass.css                      # 选课CSS文件
+├── addClass.ts                       # 选课TypeScript文件
+├── addClass.js                       # 选课编译后的JavaScript文件
 ├── tsconfig.json                     # TypeScript配置文件
 ├── requirements.txt                  # 项目依赖
 ├── README.md                         # 项目说明文档
-└── CHANGELOG.md                      # 版本更新日志
+├── CHANGELOG.md                      # 版本更新日志
+└── CHANGELOG.html                    # HTML格式的版本更新日志
 ```
 
 ## 功能说明
@@ -202,14 +199,16 @@ python json_to_js.py
 
 #### 1. 编译TypeScript文件
 
+编译addClass.ts文件：
+
 ```bash
-tsc app.ts
+tsc addClass.ts --target es2015 --lib "es2015,dom"
 ```
 
-或使用tsconfig.json配置编译：
+编译classArrange.ts文件：
 
 ```bash
-tsc
+tsc classArrange.ts --target es2015 --lib "es2015,dom"
 ```
 
 #### 2. 启动前端应用
@@ -227,7 +226,10 @@ npm install -g http-server
 http-server
 ```
 
-然后在浏览器中访问：http://localhost:8000
+然后在浏览器中访问：
+- 原始版本：http://localhost:8000
+- 美化版本：http://localhost:8000/addClass.html
+- 新建版本：http://localhost:8000/classArrange.html
 
 ## 数据格式说明
 
