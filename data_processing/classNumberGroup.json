@@ -22812,7 +22812,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,
@@ -22872,7 +22872,7 @@
                     "end_week": 8,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 1,
@@ -22890,7 +22890,7 @@
                     "end_week": 16,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 1,
@@ -22919,7 +22919,7 @@
                     "end_week": 8,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -22937,7 +22937,7 @@
                     "end_week": 16,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -22996,7 +22996,7 @@
                     "end_week": 8,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 3,
@@ -23013,7 +23013,7 @@
                     "end_week": 16,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 3,
@@ -23222,7 +23222,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -23252,7 +23252,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,
@@ -23492,7 +23492,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -23522,7 +23522,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,
@@ -23552,7 +23552,7 @@
                     "end_week": 12,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 5,
@@ -23584,7 +23584,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 3,
@@ -23662,7 +23662,7 @@
                     "end_week": 16,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": []
             }
         ]
@@ -23683,7 +23683,7 @@
                     "end_week": 7,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,
@@ -23803,7 +23803,7 @@
                     "end_week": 16,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": []
             }
         ]
@@ -23824,7 +23824,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 5,
@@ -23854,7 +23854,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -23944,7 +23944,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -23974,7 +23974,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 3,
@@ -24004,7 +24004,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,
@@ -24147,7 +24147,7 @@
                     "end_week": 16,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": []
             }
         ]
@@ -24288,7 +24288,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 5,
@@ -24318,7 +24318,7 @@
                     "end_week": 14,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 5,
@@ -34802,7 +34802,7 @@
                     "end_week": 16,
                     "week_type": null
                 },
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,

@@ -40,6 +40,8 @@ def parse_time_location(time_location_str):
                 campus = 2
             elif location.startswith('GT'):
                 campus = 3
+            elif location.startswith('ARTS'):
+                campus = 0
         
         # 解析周次信息
         week_pattern = r'^(\d+)~(\d+)(?:\((单|双)\))?$'

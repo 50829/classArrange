@@ -38703,7 +38703,7 @@
                     "week_type": null
                 },
                 "location": "ARTS401",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,
@@ -38787,7 +38787,7 @@
                     "week_type": null
                 },
                 "location": "ARTS305",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 1,
@@ -38806,7 +38806,7 @@
                     "week_type": null
                 },
                 "location": "ARTS305",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 1,
@@ -38847,7 +38847,7 @@
                     "week_type": null
                 },
                 "location": "ARTS305",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -38866,7 +38866,7 @@
                     "week_type": null
                 },
                 "location": "ARTS305",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -38949,7 +38949,7 @@
                     "week_type": null
                 },
                 "location": "ARTS305",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 3,
@@ -38967,7 +38967,7 @@
                     "week_type": null
                 },
                 "location": "ARTS305",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 3,
@@ -39260,7 +39260,7 @@
                     "week_type": null
                 },
                 "location": "ARTS304",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -39302,7 +39302,7 @@
                     "week_type": null
                 },
                 "location": "ARTS304",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,
@@ -39638,7 +39638,7 @@
                     "week_type": null
                 },
                 "location": "ARTS404",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -39680,7 +39680,7 @@
                     "week_type": null
                 },
                 "location": "ARTS303",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,
@@ -39722,7 +39722,7 @@
                     "week_type": null
                 },
                 "location": "ARTS301",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 5,
@@ -39766,7 +39766,7 @@
                     "week_type": null
                 },
                 "location": "ARTS401",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 3,
@@ -39869,7 +39869,7 @@
                     "week_type": null
                 },
                 "location": "ARTS301",
-                "campus": null,
+                "campus": 0,
                 "time_slots": []
             }
         ]
@@ -39902,7 +39902,7 @@
                     "week_type": null
                 },
                 "location": "ARTS401",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,
@@ -40070,7 +40070,7 @@
                     "week_type": null
                 },
                 "location": "ARTS301",
-                "campus": null,
+                "campus": 0,
                 "time_slots": []
             }
         ]
@@ -40103,7 +40103,7 @@
                     "week_type": null
                 },
                 "location": "ARTS303",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 5,
@@ -40145,7 +40145,7 @@
                     "week_type": null
                 },
                 "location": "ARTS403",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -40271,7 +40271,7 @@
                     "week_type": null
                 },
                 "location": "ARTS303",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 2,
@@ -40313,7 +40313,7 @@
                     "week_type": null
                 },
                 "location": "ARTS303",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 3,
@@ -40355,7 +40355,7 @@
                     "week_type": null
                 },
                 "location": "ARTS303",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,
@@ -40589,7 +40589,7 @@
                     "week_type": null
                 },
                 "location": "ARTS301",
-                "campus": null,
+                "campus": 0,
                 "time_slots": []
             }
         ]
@@ -40790,7 +40790,7 @@
                     "week_type": null
                 },
                 "location": "ARTS401",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 5,
@@ -40832,7 +40832,7 @@
                     "week_type": null
                 },
                 "location": "ARTS403",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 5,
@@ -61479,7 +61479,7 @@
                     "week_type": null
                 },
                 "location": "ARTS403",
-                "campus": null,
+                "campus": 0,
                 "time_slots": [
                     {
                         "day_of_week": 4,

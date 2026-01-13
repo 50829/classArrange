@@ -1,6 +1,6 @@
 // 课程信息数据
-// 生成时间: 2026-01-13 08:08:34
-const infoCreateTime = "20260113080834";
+// 生成时间: 2026-01-13 17:15:28
+const infoCreateTime = "20260113171528";
 
 // 课程详情信息
 const classInfo = [
@@ -39632,7 +39632,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS401",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -39718,7 +39718,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS305",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 1,
@@ -39737,7 +39737,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS305",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 1,
@@ -39779,7 +39779,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS305",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -39798,7 +39798,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS305",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -39883,7 +39883,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS305",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 3,
@@ -39901,7 +39901,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS305",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 3,
@@ -40201,7 +40201,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS304",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -40244,7 +40244,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS304",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -40588,7 +40588,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS404",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -40631,7 +40631,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS303",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -40674,7 +40674,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS301",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 5,
@@ -40719,7 +40719,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS401",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 3,
@@ -40824,7 +40824,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS301",
-        "campus": null,
+        "campus": 0,
         "time_slots": []
       }
     ],
@@ -40858,7 +40858,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS401",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -41030,7 +41030,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS301",
-        "campus": null,
+        "campus": 0,
         "time_slots": []
       }
     ],
@@ -41064,7 +41064,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS303",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 5,
@@ -41107,7 +41107,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS403",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -41236,7 +41236,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS303",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -41279,7 +41279,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS303",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 3,
@@ -41322,7 +41322,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS303",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -41563,7 +41563,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS301",
-        "campus": null,
+        "campus": 0,
         "time_slots": []
       }
     ],
@@ -41769,7 +41769,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS401",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 5,
@@ -41812,7 +41812,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS403",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 5,
@@ -62935,7 +62935,7 @@ const classInfo = [
           "week_type": null
         },
         "location": "ARTS403",
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -93479,7 +93479,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -93539,7 +93539,7 @@ const groupInfo = [
           "end_week": 8,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 1,
@@ -93557,7 +93557,7 @@ const groupInfo = [
           "end_week": 16,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 1,
@@ -93586,7 +93586,7 @@ const groupInfo = [
           "end_week": 8,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -93604,7 +93604,7 @@ const groupInfo = [
           "end_week": 16,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -93663,7 +93663,7 @@ const groupInfo = [
           "end_week": 8,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 3,
@@ -93680,7 +93680,7 @@ const groupInfo = [
           "end_week": 16,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 3,
@@ -93889,7 +93889,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -93919,7 +93919,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -94159,7 +94159,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -94189,7 +94189,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -94219,7 +94219,7 @@ const groupInfo = [
           "end_week": 12,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 5,
@@ -94251,7 +94251,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 3,
@@ -94329,7 +94329,7 @@ const groupInfo = [
           "end_week": 16,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": []
       }
     ]
@@ -94350,7 +94350,7 @@ const groupInfo = [
           "end_week": 7,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -94470,7 +94470,7 @@ const groupInfo = [
           "end_week": 16,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": []
       }
     ]
@@ -94491,7 +94491,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 5,
@@ -94521,7 +94521,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -94611,7 +94611,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 2,
@@ -94641,7 +94641,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 3,
@@ -94671,7 +94671,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,
@@ -94814,7 +94814,7 @@ const groupInfo = [
           "end_week": 16,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": []
       }
     ]
@@ -94955,7 +94955,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 5,
@@ -94985,7 +94985,7 @@ const groupInfo = [
           "end_week": 14,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 5,
@@ -105469,7 +105469,7 @@ const groupInfo = [
           "end_week": 16,
           "week_type": null
         },
-        "campus": null,
+        "campus": 0,
         "time_slots": [
           {
             "day_of_week": 4,

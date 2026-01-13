@@ -3,62 +3,421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>课程组信息查询系统</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>新一代USTC排课助手 - 即将上线</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --ustc-purple: #660066;
+            --ustc-gold: #CC9900;
+            --ustc-light-gold: #FFD700;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --text-color: #34495e;
+            --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+            --border-radius: 0.5rem;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        /* 背景装饰 */
+        .background-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .bg-shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background-color: var(--ustc-purple);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .bg-shape:nth-child(2) {
+            width: 250px;
+            height: 250px;
+            background-color: var(--ustc-gold);
+            bottom: -80px;
+            right: -80px;
+            animation-delay: 5s;
+        }
+
+        .bg-shape:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            background-color: var(--ustc-purple);
+            top: 50%;
+            right: 10%;
+            animation-delay: 10s;
+        }
+
+        .bg-shape:nth-child(4) {
+            width: 150px;
+            height: 150px;
+            background-color: var(--ustc-gold);
+            bottom: 30%;
+            left: 15%;
+            animation-delay: 15s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, -20px) rotate(5deg);
+            }
+            50% {
+                transform: translate(0, -40px) rotate(0deg);
+            }
+            75% {
+                transform: translate(-20px, -20px) rotate(-5deg);
+            }
+        }
+
+        /* 主容器 */
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* 头部 */
+        .header {
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 2rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-circle {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--ustc-purple), var(--ustc-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            animation: pulse 2s infinite;
+        }
+
+        .logo-icon {
+            font-size: 5rem;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(102, 0, 102, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(102, 0, 102, 0);
+            }
+        }
+
+        /* 内容区域 */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--ustc-purple);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--ustc-gold);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 按钮样式 */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--ustc-purple), var(--ustc-gold));
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* 特性列表 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--ustc-purple);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
+        /* 底部 */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .logo-icon {
+                font-size: 4rem;
+            }
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .logo-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>课程组信息查询系统</h1>
-        
-        <!-- 搜索功能区域 -->
-        <div class="search-section">
-            <h2>搜索课程组</h2>
-            <div class="search-form">
-                <div class="form-group">
-                    <label for="course-number">课程编号:</label>
-                    <input type="text" id="course-number" placeholder="输入课程编号">
-                </div>
-                <div class="form-group">
-                    <label for="course-name">课程名称:</label>
-                    <input type="text" id="course-name" placeholder="输入课程名称">
-                </div>
-                <div class="form-group">
-                    <label for="group-id">课程组ID:</label>
-                    <input type="number" id="group-id" placeholder="输入课程组ID">
-                </div>
-                <button id="search-btn">搜索</button>
-                <button id="clear-btn">清除</button>
-            </div>
-        </div>
-
-        
-
-        <!-- 已选课程组展示区域 -->
-        <div class="selected-groups-section">
-            <h2>已选课程组</h2>
-            <div id="selected-groups" class="selected-groups-list">
-                <p class="no-selections">暂无选择的课程组</p>
-            </div>
-        </div>
-
-        <!-- 搜索结果区域 -->
-        <div class="results-section">
-            <h2>搜索结果</h2>
-            <div id="search-results" class="group-list"></div>
-        </div>
+    <!-- 背景装饰 -->
+    <div class="background-decoration">
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
+        <div class="bg-shape"></div>
     </div>
 
-    <!-- 引入数据文件和主脚本 -->
-    <script src="class_info_data.js"></script>
-    <script src="app.js"></script>
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-circle">
+                    <i class="fas fa-calendar-alt logo-icon"></i>
+                </div>
+            </div>
+        </header>
 
-    <!-- 课程组详情弹窗 -->
-    <div id="group-details-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-course-name">课程详情</h2>
-            <div id="modal-course-info"></div>
-        </div>
+        <!-- 内容区域 -->
+        <main class="content">
+            <h1 class="title">新一代USTC排课助手</h1>
+            <h2 class="subtitle">即将上线</h2>
+            <p class="description">
+                我们正在为您打造全新的课程安排体验，让排课更智能、更高效、更便捷。
+                敬请期待我们的正式发布，开启数字化排课新篇章！
+            </p>
+
+            <!-- 查看更新日志按钮 -->
+            <a href="CHANGELOG.html" class="btn">
+                <i class="fas fa-history"></i> 查看更新日志
+            </a>
+
+            <!-- 查看预览项目按钮 -->
+            <a href="index_addClass.html" class="btn">
+                <i class="fas fa-history"></i> 立刻添加课程
+            </a>
+
+            <!-- 特性预览 -->
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">智能算法</h3>
+                    <p class="feature-description">基于高效的排课算法，优化时间冲突，提高资源利用率</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">移动优先</h3>
+                    <p class="feature-description">响应式设计，支持多设备访问，随时随地查看课程安排</p>
+                </div>
+                <!--
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">协同工作</h3>
+                    <p class="feature-description">支持教师、学生、管理员协同使用，提升工作效率</p>
+                </div>
+                -->
+            </div>
+        </main>
+
+        <!-- 底部 -->
+        <footer class="footer">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>raymond.lei@mail.ustc.edu.cn</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <a href="https://raymondzylei.me" style="color: var(--text-color); text-decoration: none;">https://raymondzylei.me</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>中科大 少院 大一新生一枚</span>
+                </div>
+            </div>
+            <p class="copyright">
+                © 2026 RaymondzyLei 版权所有
+            </p>
+        </footer>
     </div>
 </body>
 </html>
